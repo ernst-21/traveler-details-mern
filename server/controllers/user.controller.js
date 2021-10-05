@@ -36,6 +36,7 @@ const create = async (req, res, next) => {
   objArr.push(flattenObj(userObj.personalData));
   objArr.push(flattenObj(userObj.travelInfo));
   objArr.push(flattenObj(userObj.travelIdeas));
+  objArr.push(flattenObj(userObj.negotiation));
 
   let flattenedObj = objArr.reduce(function(acc, val) {
     return Object.assign(acc, val);
