@@ -49,6 +49,7 @@ const UserSchema = new mongoose.Schema({
   negotiationStage: {type: String},
   negotiationStageNote: {type: String},
   negotiationDueDate: {type: Date, default: Date.now},
+  negotiationStageAction: {type: String, trim: true},
   negotiationMemo: {type: String},
   salt: String,
   updated: Date,
