@@ -20,9 +20,9 @@ const Starting = ({ setComponentIndex }) => {
 
   const handleSubmit = (values) => {
     let newValues;
-    if (form.getFieldValue('with') === 'Couple') {
+    if (form.getFieldValue('travelPartners') === 'Couple') {
       newValues = { ...values, adults: 2, young: 0, children: 0, babies: 0 };
-    } else if (form.getFieldValue('with') === 'Alone') {
+    } else if (form.getFieldValue('travelPartners') === 'Alone') {
       newValues = { ...values, adults: 1, young: 0, children: 0, babies: 0 };
     } else {
       newValues = values;
@@ -51,23 +51,23 @@ const Starting = ({ setComponentIndex }) => {
         value={values}
       >
         <RadioBlock
-          name="with"
+          name="travelPartners"
           question={startingProject[0].question}
           explanation={startingProject[0].explanation}
           options={startingProject[0].options}
         />
         <Form.Item shouldUpdate>
           {() =>
-            form.getFieldValue('with') === 'Couple' ? (
+            form.getFieldValue('travelPartners') === 'Couple' ? (
               <RadioBlock
                 name="motive"
                 question={startingProject[1].question}
                 explanation={startingProject[1].explanation}
                 options={startingProject[1].options}
               />
-            ) : form.getFieldValue('with') === 'Friends' ||
-            form.getFieldValue('with') === 'Family' ||
-            form.getFieldValue('with') === 'Group' ? (
+            ) : form.getFieldValue('travelPartners') === 'Friends' ||
+            form.getFieldValue('travelPartners') === 'Family' ||
+            form.getFieldValue('travelPartners') === 'Group' ? (
                 <People />
               ) : null
           }
